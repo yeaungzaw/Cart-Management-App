@@ -33,7 +33,12 @@ export const createProductCard = ({ id, image, title, price, description, rating
 }
 
 export const productRender = (productArr) => {
-    productLists.innerHTML = "";
+    productLists.innerHTML = `
+    <div class="product-empty-stage m-auto col-span-full row-span-full py-4 flex-col justify-center items-center gap-4 hidden last:flex">
+        <img class="w-72 " src="./public/img/empty-product.svg" alt="">
+        <p class="text-center text-xl text-neutral-600">No results matched</p>
+    </div>
+    `;
     productArr.forEach(product => productLists.append(createProductCard(product)))
 }
 
@@ -85,8 +90,8 @@ export const productListHandler = (event) => {
         } else {
             const cartItemPosition = cartBody.querySelector(".cart-item:last-child")?.getBoundingClientRect();
 
-            const top  = cartItemPosition ? (cartItemPosition.bottom + 10 + "px") : (cartBody.getBoundingClientRect().top + 10 + "px"); 
-            const left = cartItemPosition ? (cartItemPosition.left + 10 + "px")   : (cartBody.getBoundingClientRect().left + "px");
+            const top = cartItemPosition ? (cartItemPosition.bottom + 10 + "px") : (cartBody.getBoundingClientRect().top + 10 + "px");
+            const left = cartItemPosition ? (cartItemPosition.left + 10 + "px") : (cartBody.getBoundingClientRect().left + "px");
 
             keyframe = [
                 {

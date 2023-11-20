@@ -26,3 +26,12 @@
 .nav--hidden {
     @apply -translate-y-full;
 }
+
+.scroll-bar--hidden {
+    -ms-overflow-style: none; /* Internet Explorer */
+    scrollbar-width: none; /* Firefox */
+}
+
+#categoryLists::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}

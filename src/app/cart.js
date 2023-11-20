@@ -30,7 +30,7 @@ export const addToCart = (id) => {
 
 export const added = (btn) => {
 
-    btn.classList.add("bg-neutral-600", "text-white");
+    btn.classList.add("bg-zinc-600", "text-zinc-100");
     btn.innerText = "Added";
     btn.disabled = true;
 
@@ -67,12 +67,12 @@ export const removeFromCart = (id) => {
 
             cartItem.addEventListener("animationend", () => {
                 cartItem.remove();
-                const productCard = productLists.querySelector(`[product-id="${id}"]`);
-                const addToCartBtn = productCard.querySelector(".add-to-cart");
-
-                addToCartBtn.innerText = "Add to Cart";
-                addToCartBtn.classList.remove("bg-neutral-600", "text-white");
-                addToCartBtn.disabled = false;
+                            const productCard = productLists.querySelector(`[product-id="${id}"]`);
+            const addToCartBtn = productCard.querySelector(".add-to-cart");
+        
+            addToCartBtn.innerText = "Add to Cart";
+            addToCartBtn.classList.remove("bg-zinc-600", "text-zinc-100");
+            addToCartBtn.disabled = false;
             })
 
             const Toast = Swal.mixin({
@@ -82,14 +82,14 @@ export const removeFromCart = (id) => {
                 timer: 3000,
                 timerProgressBar: true,
                 didOpen: (toast) => {
-                    toast.onmouseenter = Swal.stopTimer;
-                    toast.onmouseleave = Swal.resumeTimer;
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
                 }
-            });
-            Toast.fire({
+              });
+              Toast.fire({
                 icon: "success",
                 title: "Deleted xsuccessfully"
-            });
+              });
         }
     });
 
