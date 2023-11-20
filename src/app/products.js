@@ -36,7 +36,7 @@ export const productRender = (productArr) => {
     productLists.innerHTML = `
     <div class="product-empty-stage m-auto col-span-full row-span-full py-4 flex-col justify-center items-center gap-4 hidden last:flex">
         <img class="w-72 " src="./public/img/empty-product.svg" alt="">
-        <p class="text-center text-xl text-neutral-600">No results matched</p>
+        <p class="text-center text-xl text-zinc-600">No results matched</p>
     </div>
     `;
     productArr.forEach(product => productLists.append(createProductCard(product)))

@@ -67,12 +67,12 @@ export const removeFromCart = (id) => {
 
             cartItem.addEventListener("animationend", () => {
                 cartItem.remove();
-                            const productCard = productLists.querySelector(`[product-id="${id}"]`);
-            const addToCartBtn = productCard.querySelector(".add-to-cart");
-        
-            addToCartBtn.innerText = "Add to Cart";
-            addToCartBtn.classList.remove("bg-zinc-600", "text-zinc-100");
-            addToCartBtn.disabled = false;
+                const productCard = productLists.querySelector(`[product-id="${id}"]`);
+                const addToCartBtn = productCard.querySelector(".add-to-cart");
+
+                addToCartBtn.innerText = "Add to Cart";
+                addToCartBtn.classList.remove("bg-zinc-600", "text-zinc-100");
+                addToCartBtn.disabled = false;
             })
 
             const Toast = Swal.mixin({
@@ -82,14 +82,14 @@ export const removeFromCart = (id) => {
                 timer: 3000,
                 timerProgressBar: true,
                 didOpen: (toast) => {
-                  toast.onmouseenter = Swal.stopTimer;
-                  toast.onmouseleave = Swal.resumeTimer;
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
                 }
-              });
-              Toast.fire({
+            });
+            Toast.fire({
                 icon: "success",
                 title: "Deleted xsuccessfully"
-              });
+            });
         }
     });
 
