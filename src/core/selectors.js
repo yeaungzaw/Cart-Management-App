@@ -21,3 +21,5 @@ export const productLists = app.querySelector("#productLists");
 export const ratingStars = app.querySelector("#ratingStars");
 
 export const totalAmount = app.querySelector("#totalAmount");
+
+export const nav = app.querySelector(".nav");

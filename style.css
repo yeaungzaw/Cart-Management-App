@@ -22,3 +22,7 @@
 .swal2-cancel {
     @apply rounded-none bg-neutral-300 text-neutral-600 !important;
 }
+
+.nav--hidden {
+    @apply -translate-y-full;
+}

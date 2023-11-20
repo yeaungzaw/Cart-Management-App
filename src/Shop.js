@@ -3,7 +3,7 @@ import { categoryListHandler, categoryRender } from "./app/categories";
 import { productListHandler, productRender } from "./app/products";
 import { categories, products } from "./core/data";
 import { cartBtnHandler, searchBarInputAllClearBtnHandler, searchBarInputHandler, searchBtnHandler } from "./core/handlers";
-import { cartBody, cartBtn, cartCloseBtn, categoryLists, productLists, searchBarInput, searchBarInputAllClearBtn, searchBtn } from "./core/selectors";
+import { cartBody, cartBtn, cartCloseBtn, categoryLists, nav, productLists, searchBarInput, searchBarInputAllClearBtn, searchBtn } from "./core/selectors";
 
 class Shop {
 
@@ -27,11 +27,27 @@ class Shop {
         cartBody.addEventListener("click", cartBodyHandler);
     }
 
+    navShowHide() {
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > lastScrollY) {
+                // console.log("down");
+                nav.classList.add("nav--hidden");
+            } else {
+                // console.log("up");
+                nav.classList.remove("nav--hidden");
+            }
+            lastScrollY = window.scrollY;
+        });
+    }
+
     init() {
         // console.log("hello");
         this.observer();
         this.initialRender();
         this.listener();
+        this.navShowHide();
     }
 
 }
