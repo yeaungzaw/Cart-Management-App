@@ -9,7 +9,7 @@ export const cartBtnHandler = () => {
 }
 
 export const searchBtnHandler = () => {
-    searchBar.classList.toggle("-translate-y-full");
+    searchBar.classList.toggle("-translate-x-[300px]");
     searchBar.classList.toggle("opacity-0");
     searchBar.classList.add("duration-300");
     searchBarInput.focus();

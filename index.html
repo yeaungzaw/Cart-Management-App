@@ -12,55 +12,53 @@
   <main class="flex flex-col min-h-screen" id="app">
     <header class="fixed w-full z-40 bg-white opacity-95 px-5 py-3 mb-6 border-b-2 border-neutral-500">
       <div class="container">
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center mb-2">
           <div>
             <h1 class="text-2xl font-bold text-neutral-800">MMS Solutions</h1>
             <p class="text-neutral-500">E-commerce App</p>
           </div>
 
-          <div class="flex gap-2">
+          <button id="cartBtn"
+            class="relative active:scale-90 duration-100 border bg-neutral-600 border-neutral-600 text-white w-11 h-11 flex justify-center items-center animate__animated">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-5 h-5 stroke-1">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+            </svg>
 
-            <div id="searchBar" class="-translate-y-full opacity-0 border border-neutral-600 w-60 h-11 flex gap-3 px-2">
-              <input id="searchBarInput" type="text" class="focus-within:outline-none w-36 flex-grow">
-              <button id="searchBarInputAllClearBtn" class="active:scale-90 duration-100">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </button>
-            </div>
+            <span id="productCardCount"
+              class="cart-item-count absolute w-6 h-6 rounded-full border-2 border-white top-0 right-0 translate-x-1/2 -translate-y-1/2 flex justify-center items-center text-xs font-bold bg-red-500">
+              0
+            </span>
+          </button>
+        </div>
 
-            <button id="searchBtn"
-              class="active:scale-90 duration-100 border border-neutral-600 w-11 h-11 flex justify-center items-center">
+        <div class="flex justify-between mb-3">
+          <div id="searchBar" class="-translate-x-[300px] opacity-0 border border-neutral-600 w-60 h-11 flex gap-3 px-2">
+            <input id="searchBarInput" type="text" class="focus-within:outline-none w-36 flex-grow">
+            <button id="searchBarInputAllClearBtn" class="active:scale-90 duration-100">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-5 h-5 stroke-1 pointer-events-none">
+                stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                  d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-            </button>
-
-            <button id="cartBtn"
-              class="relative active:scale-90 duration-100 border bg-neutral-600 border-neutral-600 text-white w-11 h-11 flex justify-center items-center animate__animated">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-5 h-5 stroke-1">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-              </svg>
-
-              <span
-                id="productCardCount"
-                class="cart-item-count absolute w-6 h-6 rounded-full border-2 border-white top-0 right-0 translate-x-1/2 -translate-y-1/2 flex justify-center items-center text-xs font-bold bg-red-500">
-                0
-              </span>
             </button>
           </div>
+
+          <button id="searchBtn"
+            class="active:scale-90 duration-100 border bg-neutral-600 text-white border-neutral-600 w-11 h-11 flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-5 h-5 stroke-1 pointer-events-none">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </button>
         </div>
       </div>
       </div>
     </header>
 
-    <div class="h-24" id="headerSpacer">
+    <div class="h-44" id="headerSpacer">
     </div>
 
     <div id="cartBox"
@@ -71,7 +69,8 @@
             <h1 class="font-bold text-2xl">Your Items</h1>
             <p class="text-neutral-500">
               E-commerce
-              <span id="cartItemCount" class="bg-red-500 text-white w-6 h-6 text-xs font-bold py-1 px-2 rounded-md">0</span>
+              <span id="cartItemCount"
+                class="bg-red-500 text-white w-6 h-6 text-xs font-bold py-1 px-2 rounded-md">0</span>
             </p>
           </div>
 
@@ -88,10 +87,10 @@
 
       <div id="cartBody" class="px-5 pb-10 flex flex-col flex-grow overflow-y-scroll">
 
-          <div class="cart-empty-stage m-auto flex-col justify-center items-center hidden last:flex">
-            <img class="w-72" src="./public/img/empty.png" alt="">
-            <p class="text-center text-neutral-600">There is no item in cart</p>
-          </div>
+        <div class="cart-empty-stage m-auto flex-col justify-center items-center hidden last:flex">
+          <img class="w-72" src="./public/img/empty.png" alt="">
+          <p class="text-center text-neutral-600">There is no item in cart</p>
+        </div>
 
       </div>
 
@@ -199,7 +198,7 @@
       </svg>
     </template>
 
-    <template id="cartItem">  
+    <template id="cartItem">
       <div class="cart-item group">
         <img class="cart-item-img h-16 translate-y-1/2 ml-3 z-10 relative"
           src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="">
@@ -225,7 +224,8 @@
             </p>
 
             <div class="flex">
-              <button class="active:scale-90 duration-100 cart-item-quantity-decrement bg-neutral-300 w-6 flex justify-center items-center">
+              <button
+                class="active:scale-90 duration-100 cart-item-quantity-decrement bg-neutral-300 w-6 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="w-4 h-4 pointer-events-none">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
@@ -234,7 +234,8 @@
 
               <span class="cart-item-quantity bg-neutral-100 w-8 flex justify-end items-center pr-1">1</span>
 
-              <button class="active:scale-90 duration-100 cart-item-quantity-increment bg-neutral-300 w-6 flex justify-center items-center">
+              <button
+                class="active:scale-90 duration-100 cart-item-quantity-increment bg-neutral-300 w-6 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="w-4 h-4 pointer-events-none">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
