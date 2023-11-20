@@ -35,7 +35,7 @@ export const createProductCard = ({ id, image, title, price, description, rating
 export const productRender = (productArr) => {
     productLists.innerHTML = `
     <div class="product-empty-stage m-auto col-span-full row-span-full py-4 flex-col justify-center items-center gap-4 hidden last:flex">
-        <img class="w-72" src="../public/img/empty-product.svg" alt="">
+        <img class="w-72" src="../public/img/empty-product.png"></img>
         <p class="text-center text-xl text-zinc-600">No results matched</p>
     </div>
     `;
