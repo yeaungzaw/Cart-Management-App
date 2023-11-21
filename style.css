@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 .category-list.active {
-    @apply bg-neutral-600 text-white;
+    @apply bg-zinc-600 text-zinc-100;
 }
 
 .swal2-popup {

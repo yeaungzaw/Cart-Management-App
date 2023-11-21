@@ -29,7 +29,7 @@ export const addToCart = (id) => {
 }
 
 export const added = (btn) => {
-
+    btn.classList.remove("text-zinc-700")
     btn.classList.add("bg-zinc-600", "text-zinc-100");
     btn.innerText = "Added";
     btn.disabled = true;
